@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<beans>
+
+    <bean id="helloService" class="com.myspring.main.service.HelloServiceImpl" scope="prototype">
+        <property name="text" value="Hello World!"></property>
+        <property name="text1" value="Hello World11!"></property>
+        <property name="int1" value="11"></property>
+        <property name="wrapService" ref="wrapService"></property>
+    </bean>
+
+    <bean id="wrapService" class="com.myspring.main.service.WrapService"  scope="prototype">
+        <property name="helloService" ref="helloService"></property>
+    </bean>
+
+</beans>
